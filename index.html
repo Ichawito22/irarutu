@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Irarutu</title>
+<style>
+  /* Reset some basic styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #eeece9;
+    color: #9e4700;
+    line-height: 1.6;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #a16900;
+    color: #ece6e6;
+  }
+  header img.logo {
+    height: 60px;
+    width: auto;
+    margin-right: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 7px #294904;
+  }
+  header h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 1.5px;
+  }
+  .nav-options {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .nav-options a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #3c8d0d;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  .carousel-container {
+    position: relative;
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+  .carousel-slide {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+  }
+  .carousel-slide div {
+    min-width: 100%; /* Set each slide to take full width */
+    text-align: center; /* Center the content */
+  }
+  .carousel-slide img {
+    max-width: 300px; /* Mengubah ukuran foto */
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 0 auto; /* Memusatkan gambar */
+  }
+  .food-name {
+    font-weight: bold; /* Menebalkan teks */
+    margin-top: 5px; /* Jarak atas */
+  }
+  .carousel-dots {
+    text-align: center;
+    margin-top: 12px;
+  }
+  .carousel-dot {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin: 0 6px;
+    background-color: #e6e2de;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .carousel-dot.active {
+    background-color: #3c8d0d;
+  }
+  main {
+    max-width: 840px;
+    margin: 30px auto 50px;
+    padding: 0 16px;
+  }
+  section.food-item {
+    background-color: #a86500; 
+    margin-bottom: 24px;
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 10px rgba(60, 141, 13, 0.25);
+    position: relative; /* Untuk elemen batik */
+  }
+  section.food-item h2 {
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+  }
+  section.food-item p {
+    font-size: 1.1rem;
+    color: #eede00;
+  }
+  footer {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #965a00;
+    color: #f9fd00;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<header>
+  <img class="logo" src="https://ik.imagekit.io/fwwkpmkgb/WhatsApp%20Image%202025-06-02%20at%2010.32.52.jpeg" />
+  <h1>Papua di Lidah Nusantara</h1>
+</header>
+
+<div class="nav-options">
+  <a href="#info-gizi">Info Gizi</a>
+  <a href="#sejarah">Sejarah</a>
+</div>
+
+<div class="carousel-container" aria-label="Gallery makanan khas Papua">
+  <div class="carousel-slide" id="carousel-slide">
+    <div>
+      <img src="https://cdn1-production-images-kly.akamaized.net/VYo2v8fXvwGNOy7RluB7-sPQR30=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3225045/original/030810800_1598943228-PAPEDA.jpg" alt="Papeda" />
+      <div class="food-name">Papeda</div>
+    </div>
+    <div>
+      <img src="https://asset.kompas.com/crops/_v7GduHQG8-8QlXsQxncMryvw2E=/84x0:674x393/1200x800/data/photo/2021/10/02/6157c779718b6.jpg" alt="Kue Lontar" />
+      <div class="food-name">Kue Lontar</div>
+    </div>
+    <div>
+      <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/1005/2023/12/20/Screenshot_20231220_185606_Instagram-3028046.jpg" alt="Roti Abon Gulung" />
+      <div class="food-name">Roti Abon Gulung</div>
+    </div>
+  </div>
+  <div class="carousel-dots" id="carousel-dots">
+    <span class="carousel-dot active" data-index="0"></span>
+    <span class="carousel-dot" data-index="1"></span>
+    <span class="carousel-dot" data-index="2"></span>
+  </div>
+</div>
+
+<main>
+  <section class="food-item" id="papeda">
+    <h2>Papeda</h2>
+    <p>Papeda adalah makanan khas Papua yang terbuat dari sagu yang dimasak menjadi bubur yang kental dan lengket.</p>
+  </section>
+  <section class="food-item" id="kue-lontar">
+    <h2>Kue Lontar</h2>
+    <p>Kue lontar adalah kue tradisional Papua yang terbuat dari bahan dasar tepung dan gula, dibentuk lonjong dan dipanggang, memiliki cita rasa manis dan tekstur kenyal khas.</p>
+  </section>
+  <section class="food-item" id="roti-abon-gulung">
+    <h2>Roti Abon Gulung</h2>
+    <p>Roti Abon Gulung merupakan roti khas Papua yang diisi dengan abon gurih, dipotong kecil-kecil lalu digulung, cocok untuk camilan yang lezat dan praktis.</p>
+  </section>
+
+  <section class="food-item" id="info-gizi">
+    <h2>Gizi Makanan Khas Papua</h2>
+    <p>Sebagian besar makanan khas Papua memiliki bahan yang banyak akan nutrisi atau, diantranya adalah: </p>
+    <p>
+      1. Papeda: berbahan dasar sagu sehingga memiliki karbohidrat yang kaya, selain karbohidrat terdapat, protein, serat, kalsium, fosfor, zat besi, vitamin A, B1, C, dan mineral
+      <br>
+      2. Kue Lontar: dalam kue lontar mengandung karbohidrat, protein, dan lemak dari bahan-bahan seperti terigu, margarin, susu, dan telur. 
+      <br>
+      3. Roti Abon Gulung: dalam Roti Abon Gulung mengandung protein dari abon, karbohidrat dari roti, dan mungkin juga lemak, kalsium, fosfor, dan vitamin
+    </p>
+  </section>
+
+  <section class="food-item" id="sejarah">
+    <h2>Pengaruh Masa Islam terhadap perkembangan makanan khas Papua </h2>
+    <p>Sebagian besar makanan Papua mengalami perubahan terutama pola makannya yang dimana hal tersebut salah satu penyebabnya diakibatkan oleh pengaruh Islam, contoh betuknya:</p>
+    <p>
+      1. Papeda: Perubahan terhadap cara makan dan kombinasi lauk, yang dimana sebelum Pengaruh Islam datang Ke indonesia bagian Timur, Papeda dapat di makan dengan kombinasi lauk apapun, namun karena pengaruh islam lauk yang diperbolehkan adalah non babi. 
+      <br> 
+      2. Kue Lontar: perubahan resep yang dimana dibuat menajadi halal dan mengikuti rasa manis yang khas dari kue-kue daerah Melayu. 
+    </p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Papua di Lidah Nusantara - Irarutu
+</footer>
+
+<script>
+  const carouselSlide = document.getElementById('carousel-slide');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const totalSlides = dots.length;
+  let currentIndex = 0;
+
+  function updateSlidePosition() {
+    carouselSlide.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[currentIndex].classList.add('active');
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    updateSlidePosition();
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      goToSlide(parseInt(dot.getAttribute('data-index')));
+      resetAutoSlide();
+    });
+  });
+
+  function autoSlide() {
+    currentIndex++;
+    if (currentIndex >= totalSlides) {
+      currentIndex = 0;
+    }
+    updateSlidePosition();
+  }
+
+  let slideInterval = setInterval(autoSlide, 4000);
+
+  function resetAutoSlide() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(autoSlide, 4000);
+  }
+
+  // Initiate on load
+  window.onload = () => {
+    updateSlidePosition();
+  };
+  window.onresize = () => {
+    updateSlidePosition();
+  };
+</script>
+</body>
+</html>
